@@ -1,2 +1,2 @@
-main: main.c hello1.c
-	gcc -o prog main.c hello1.c -I.
+main: main.c hello.c
+	g++ -o prog main.c hello.c -I.

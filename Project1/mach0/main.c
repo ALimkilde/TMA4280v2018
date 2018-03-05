@@ -38,7 +38,7 @@ double vtest(){
   std::ofstream file;
   file.open("vtest.txt");
 
-  for(int k = 1; k < 5; k++){
+  for(int k = 0; k < 5; k++){
     int n = pow(2,k);
     double pin = mypi(n);
     file << n << ", " << std::abs(pin - M_PI) << "\n";

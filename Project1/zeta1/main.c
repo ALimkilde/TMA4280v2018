@@ -161,8 +161,6 @@ void timemypiMPI(int argc, char **  argv){
   return;
 }
 
-
-
 int main(int argc, char ** argv){
   int n = atoi(argv[1]);
   if (n == -1){utest(); return 0;}
