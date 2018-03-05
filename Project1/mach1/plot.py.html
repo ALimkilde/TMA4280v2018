@@ -1,0 +1,35 @@
+<html><head>
+<title>plot.py</title>
+<meta name="Generator" content="htmlizer/[twisted, version 16.0.0]" />
+<link rel="alternate" href="plot.py" type="text/x-python" />
+
+</head>
+<body>
+<pre><span class="py-src-keyword">import</span> <span class="py-src-variable">matplotlib</span>.<span class="py-src-variable">pyplot</span> <span class="py-src-keyword">as</span> <span class="py-src-variable">plt</span>
+<span class="py-src-keyword">import</span> <span class="py-src-variable">numpy</span> <span class="py-src-keyword">as</span> <span class="py-src-variable">np</span>
+
+
+<span class="py-src-variable">Nvec</span> = <span class="py-src-variable">np</span>.<span class="py-src-variable">power</span>(<span class="py-src-number">2</span>,[<span class="py-src-number">1</span>,<span class="py-src-number">2</span>,<span class="py-src-number">3</span>,<span class="py-src-number">4</span>,<span class="py-src-number">5</span>,<span class="py-src-number">6</span>])
+
+<span class="py-src-keyword">for</span> <span class="py-src-variable">n</span> <span class="py-src-keyword">in</span> <span class="py-src-variable">Nvec</span>:
+    <span class="py-src-variable">E</span> = <span class="py-src-variable">np</span>.<span class="py-src-variable">loadtxt</span>(<span class="py-src-string">'res/Errors%0.0f.txt'</span> %<span class="py-src-variable">n</span>)
+    <span class="py-src-variable">T</span> = <span class="py-src-variable">np</span>.<span class="py-src-variable">loadtxt</span>(<span class="py-src-string">'res/Times%0.0f.txt'</span> %<span class="py-src-variable">n</span>)
+    <span class="py-src-variable">plt</span>.<span class="py-src-variable">figure</span>(<span class="py-src-number">1</span>)
+    <span class="py-src-variable">plt</span>.<span class="py-src-variable">loglog</span>(<span class="py-src-variable">E</span>[:,<span class="py-src-number">0</span>],<span class="py-src-variable">E</span>[:,<span class="py-src-number">1</span>],<span class="py-src-variable">lw</span> = <span class="py-src-number">2</span>,<span class="py-src-variable">label</span> = <span class="py-src-string">'Np = %0.0f'</span> %<span class="py-src-variable">n</span>)
+
+    <span class="py-src-variable">plt</span>.<span class="py-src-variable">figure</span>(<span class="py-src-number">2</span>)
+    <span class="py-src-variable">plt</span>.<span class="py-src-variable">loglog</span>(<span class="py-src-variable">T</span>[:,<span class="py-src-number">0</span>],<span class="py-src-variable">T</span>[:,<span class="py-src-number">1</span>],<span class="py-src-variable">lw</span> = <span class="py-src-number">2</span>,<span class="py-src-variable">label</span> = <span class="py-src-string">'Np = %0.0f'</span> %<span class="py-src-variable">n</span>)
+
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">figure</span>(<span class="py-src-number">1</span>)
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">legend</span>(<span class="py-src-variable">loc</span> = <span class="py-src-string">'best'</span>,<span class="py-src-variable">fontsize</span> = <span class="py-src-number">12</span>)
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">ylabel</span>(<span class="py-src-string">'Error'</span>,<span class="py-src-variable">fontsize</span> = <span class="py-src-number">12</span>)
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">xlabel</span>(<span class="py-src-string">'n'</span>,<span class="py-src-variable">fontsize</span> = <span class="py-src-number">12</span>)
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">savefig</span>(<span class="py-src-string">'Errors.eps'</span>)
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">figure</span>(<span class="py-src-number">2</span>)
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">legend</span>(<span class="py-src-variable">loc</span> = <span class="py-src-string">'best'</span>,<span class="py-src-variable">fontsize</span> = <span class="py-src-number">12</span>)
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">ylabel</span>(<span class="py-src-string">'Execution time'</span>,<span class="py-src-variable">fontsize</span> = <span class="py-src-number">12</span>)
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">xlabel</span>(<span class="py-src-string">'n'</span>,<span class="py-src-variable">fontsize</span> = <span class="py-src-number">12</span>)
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">savefig</span>(<span class="py-src-string">'Timings.eps'</span>)
+<span class="py-src-variable">plt</span>.<span class="py-src-variable">show</span>()
+</pre>
+</body>
