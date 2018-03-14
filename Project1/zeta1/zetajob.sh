@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#PBS -N pi
+#PBS -N zeta1
 #PBS -A itea_lille-tma4280
 #PBS -W group_list=itea_lille-tma4280
 #PBS -l walltime=00:01:00
@@ -10,8 +10,9 @@
 #PBS -M asgl@dtu.dk
 #PBS -m e
 
+module load GCC/6.4.0-2.28
+
 cd $PBS_O_WORKDIR
-module load gcc openmpi
 
 mkdir -p -- res
 make convtest

@@ -14,6 +14,7 @@ vtest: program
 	./program -2
 
 convtest: program
+	mpirun -np 1 ./program -3 ;
 	mpirun -np 2 ./program -3 ;
 	mpirun -np 4 ./program -3 ;
 	mpirun -np 8 ./program -3 ;
