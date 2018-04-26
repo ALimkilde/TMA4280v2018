@@ -1,0 +1,8 @@
+N ?= 8										# Make default variable
+Np ?= 1
+
+program: main.c
+	mpic++ -std=c++11 -o program main.c
+
+test: program							# Have program as prerequisit
+	mpirun -np $(Np) ./program $(N)
